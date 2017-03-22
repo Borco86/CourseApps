@@ -5,9 +5,9 @@ import android.content.DialogInterface;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.AsyncTask;
+import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -120,7 +120,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    abstract  private class BaseTask<T> extends AsyncTask<T,Void,Cursor> {
+    abstract private class BaseTask<T> extends AsyncTask<T, Void, Cursor> {
         @Override
         protected void onPostExecute(Cursor result) {
             currentCursor = result;
@@ -128,25 +128,26 @@ public class MainActivity extends AppCompatActivity {
             cursorAdapter.notifyDataSetChanged();
         }
 
-        protected Cursor doQuery(){
+        protected Cursor doQuery() {
             Cursor newCursor = mHelper.getReadableDatabase()
                     .query(TaskContract.TaskEntry.TABLE,
-                    new String[]{
-                            TaskContract.TaskEntry._ID,
-                            TaskContract.TaskEntry.COL_TASK_TITLE},
-                    null, null, null, null, null);
+                            new String[]{
+                                    TaskContract.TaskEntry._ID,
+                                    TaskContract.TaskEntry.COL_TASK_TITLE},
+                            null, null, null, null, null);
             return newCursor;
         }
     }
 
-    private class LoadTask extends BaseTask<Void>{
+    private class LoadTask extends BaseTask<Void> {
 
         @Override
         protected Cursor doInBackground(Void... params) {
             return doQuery();
         }
     }
-    private class InsertTask extends BaseTask<ContentValues>{
+
+    private class InsertTask extends BaseTask<ContentValues> {
 
         @Override
         protected Cursor doInBackground(ContentValues... values) {
@@ -155,21 +156,23 @@ public class MainActivity extends AppCompatActivity {
                     TaskContract.TaskEntry.TABLE,
                     null,
                     values[0],
-            SQLiteDatabase.CONFLICT_REPLACE
+                    SQLiteDatabase.CONFLICT_REPLACE
 
             );
             return doQuery();
         }
     }
 
-    private class DeleteTask extends BaseTask<String>{
+    private class DeleteTask extends BaseTask<String> {
 
         @Override
         protected Cursor doInBackground(String... values) {
 
             //implementacja
+            mHelper.getWritableDatabase().delete(TaskContract.TaskEntry.TABLE, TaskContract.TaskEntry.COL_TASK_TITLE + "=?",
+                    new String[]{values[0]});
 
-            return null;
+            return doQuery();
         }
     }
 

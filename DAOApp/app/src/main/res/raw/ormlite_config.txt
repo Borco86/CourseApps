@@ -1,0 +1,22 @@
+#
+# generated on 2017/03/22 08:50:41
+#
+# --table-start--
+dataClass=com.example.rent.ormapp.Task
+tableName=task
+# --table-fields-start--
+# --field-start--
+fieldName=id
+columnName=taskId
+generatedId=true
+# --field-end--
+# --field-start--
+fieldName=title
+canBeNull=false
+# --field-end--
+# --field-start--
+fieldName=dateCreated
+# --field-end--
+# --table-fields-end--
+# --table-end--
+#################################
