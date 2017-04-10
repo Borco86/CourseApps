@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.rent.intents.MainActivity">
+
+    <Button
+        android:id="@+id/sms_button"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:text="Send SMS"
+        />
+
+    <Button
+        android:id="@+id/mail_button"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:text="Send E-mail" />
+
+    <Button
+        android:id="@+id/phone_call_button"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:text="Make call" />
+</LinearLayout>
