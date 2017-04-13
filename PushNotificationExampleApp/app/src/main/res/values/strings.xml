@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Push Notification Example App</string>
+    <string name="our_awesome_notification">notification!</string>
+</resources>
