@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Lottery</string>
+    <string name="coupon_number_format">Your cupon number is: %d</string>
+    <string name="lottery_result_format">You %s</string>
+    <string name="win">win</string>
+    <string name="lost">lost</string>
+</resources>

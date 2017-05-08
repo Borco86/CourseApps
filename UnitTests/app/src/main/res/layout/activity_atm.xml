@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_atm"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.rent.unittests.AtmActivity">
+<TextView
+    android:id="@+id/atm_console_text_view"
+    android:layout_width="match_parent"
+    android:layout_height="50dp" />
+    <Button
+        android:id="@+id/get_balance_button"
+        android:text="Get Balance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/deposit_button"
+        android:text="Deposit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/withdraw_button"
+        android:text="Withdraw"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/atm_console_edit_text"
+        android:hint="Enter Amount Here"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>

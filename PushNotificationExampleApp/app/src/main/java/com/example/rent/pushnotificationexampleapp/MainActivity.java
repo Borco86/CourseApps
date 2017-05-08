@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeInMillis(System.currentTimeMillis());
         calendar.set(Calendar.HOUR_OF_DAY, 19);
-        calendar.set(Calendar.MINUTE, 25);
+        calendar.set(Calendar.MINUTE, 50);
 
         alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
         Intent secondIntent = new Intent(this, AlarmReceiver.class);
